@@ -4,3 +4,17 @@ var twilioClient = new Twilio({
   sid: Meteor.settings.TWILIO.SID,
   token: Meteor.settings.TWILIO.TOKEN
 });
+
+Meteor.methods({
+  'sendSMS': function (opts) {
+    try {
+      var result = twilioClient.sendMessage({
+        to: opts.to,
+        body: opts.message
+      });
+    } catch (err) {
+      throw new Meteor.error(err);
+    }
+    return result;
+  }
+});
