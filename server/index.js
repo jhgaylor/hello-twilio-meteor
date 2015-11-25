@@ -1,5 +1,5 @@
 // Create handle to sms collection in database.
-var SMS = new Mongo.Collection('sms');
+SMS = new Mongo.Collection('sms');
 
 // Configure the Twilio client
 var twilioClient = new Twilio({
