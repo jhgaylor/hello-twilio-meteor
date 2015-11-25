@@ -1,3 +1,4 @@
+SMS = new Mongo.Collection('sms');
 Template.sendSMS.helpers({
 });
 
@@ -25,5 +26,14 @@ Template.sendSMS.events({
       // log out the db object that was created.
       console.log("Message sent. Result: ", result);
     });
+  }
+});
+
+Template.smsLog.helpers({
+  sms: function () {
+    return SMS.find({}, {sort: {dateCreated: -1}});
+  },
+  isOutgoing: function () {
+    return this.type === "outgoing"
   }
 });
