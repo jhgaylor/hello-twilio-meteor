@@ -5,10 +5,22 @@
 <body>
   <h1>Hello Twilio, Meteor Here!</h1>
 
-  {{> hello}}
+  {{> sendSMS}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="sendSMS">
+  <div>
+    <label for="">
+      To: <input type="text" class="to">
+    </label>
+  </div>
+  <div>
+    <label for="">
+      Message: 
+      <textarea name="" id="" cols="30" rows="10" class="message">
+        Hello From Twilio
+      </textarea>
+    </label>
+  </div>
+  <button>Click Me To Send a Message</button>
 </template>
