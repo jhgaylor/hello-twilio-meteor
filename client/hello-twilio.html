@@ -6,6 +6,8 @@
   <h1>Hello Twilio, Meteor Here!</h1>
 
   {{> sendSMS}}
+
+  {{> smsLog}}
 </body>
 
 <template name="sendSMS">
@@ -23,4 +25,21 @@
     </label>
   </div>
   <button>Click Me To Send a Message</button>
+</template>
+
+<template name="smsLog">
+  <h4>SMS Log</h4>
+  <ul>
+    {{#each sms}}
+      <li>
+        {{dateCreated}} -
+        {{#if isOutgoing}}
+          You said
+        {{else}}
+          {{from}} said
+        {{/if}}
+        "{{body}}"
+      </li>
+    {{/each}}
+  </ul>
 </template>
