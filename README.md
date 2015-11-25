@@ -4,6 +4,17 @@ Getting Started:
 
 1) Install Meteor
 2) Get Twilio Account info
+3) make settings.json look like this
+
+```json
+{
+  "TWILIO": {
+    "FROM": "TWILIO NUMBER",
+    "SID": "SID",
+    "TOKEN": "AUTH TOKEN"
+  }
+}
+```
 
 ```sh
 git clone https://github.com/jhgaylor/hello-twilio-meteor.git
@@ -14,7 +25,7 @@ meteor
 To Run with Twilio
 
 ```sh
-TWILIO_SID=<YOUR_SID> TWILIO_AUTH_TOKEN=<YOUR_AUTH_TOKEN> TWILIO_NUMBER=<YOUR_TWILIO_NUMBER meteor
+meteor --settings=settings.json
 ```
 
 To Run without Twilio
